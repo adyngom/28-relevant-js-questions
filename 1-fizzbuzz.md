@@ -23,4 +23,53 @@ I would probably ask to the interviewer if I should worry about edge cases or ba
 
 On thing that is key and is worthy of practice is walking the person through your steps as you are building the solution during the interview. Start with the obvious, you will probably need a function or class as your primary construct. Start there and always think of the K.I.A.S.S.A.P :) principle - Keep It As Stupid Simple As Possible
 
+### First step
 
+```javascript
+// comments are me talking out loud
+// let's build the function structure
+function fizzBuzz( start = 1, end = 100) { // default parameters to set the default range
+    // I need a loop - let's go with for
+    for( let i = start; i <= end; i++) {
+        // probably a variable for what will be outputted
+        let output = i;
+
+        // rest of the logic here
+
+        // outputting the result
+        console.log(output);
+    }
+}
+// call the function
+fizzBuzz(); // this prints out 1 to 100 - fancy ;)
+```
+The above satisfies my first goal on my rewritten challenge understanding
+
+### Second step
+
+Now if I follow the cadence of the challenge I will solve for two things: 
+
+    1. Choosing the proper operator to find if a number is a multiple of another
+    2. Apply it for the multiple of 3 condition and output 'Fizz'
+
+The remainder operator - %, is the perfect tool here. If number a is a multiple of number b then
+
+```javascript
+( b % a) === 0; // will be true;
+// 4 is a multiple of 2
+( 4 % 2 ) === 0; // is true
+```
+Let's apply this in the body of our function
+
+```javascript
+// rest of the logic here
+if( (i % 3) === 0 ) {
+    output = 'Fizz';
+}
+// Knowing that 3,6 and 9 are multiple of 3 let's
+// quickly test a small sequence by calling
+
+fizzBuzz(1,10); 
+// this should output
+// 1, 2, 'Fizz', 4, 5, 'Fizz', 7, 8, 'Fizz', 10
+```
