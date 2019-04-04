@@ -21,3 +21,6 @@ I would probably ask to the interviewer if I should worry about edge cases or ba
 
 ## The solution(s)
 
+On thing that is key and is worthy of practice is walking the person through your steps as you are building the solution during the interview. Start with the obvious, you will probably need a function or class as your primary construct. Start there and always think of the K.I.A.S.S.A.P :) principle - Keep It As Stupid Simple As Possible
+
+
