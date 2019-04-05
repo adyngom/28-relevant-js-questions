@@ -73,3 +73,49 @@ fizzBuzz(1,10);
 // this should output
 // 1, 2, 'Fizz', 4, 5, 'Fizz', 7, 8, 'Fizz', 10
 ```
+
+### Final step
+
+Since the Fizz condition ran perfect we can now apply the same logic  to the rest
+
+```javascript
+// multiple of 5
+if( (i % 5) === 0 ) {
+    output = 'Buzz';
+}
+
+// multiple of 3 and 5
+if( (i % 3) === 0  && (i % 5)) {
+    output = 'FizzBuzz';
+}
+```
+
+Wowza!! this satisfies all the conditions and gives us this chef d'oeuvre of a solution once assembled 
+and stripped out of all comments
+
+```javascript
+function fizzBuzz( start = 1, end = 100) { // default parameters to set the default range
+    for( let i = start; i <= end; i++) {
+        let output = i;
+        if( (i % 3) === 0 ) {
+            output = 'Fizz';
+        }
+        if( (i % 5) === 0 ) {
+            output = 'Buzz';
+        }
+        if( (i % 3) === 0  && (i % 5) === 0) {
+            output = 'FizzBuzz';
+        }
+        console.log(output);
+    }
+}
+fizzBuzz();
+```
+Wait a minute, the above solution works and is readable ( kudos for that), but let's look into a quick refactor. We can make this a tad more performant and a bit more JavaScripty which gets us into the next section... refactoring. 
+
+
+### The refactor
+
+We could of course get to a fancy one liner here for this particular challenge, but I'm not a particular fan of doing stuff for the sake of fancy or pretty. 
+
+As an interviewer, I spend more time making the candidate explain how it came down to that one liner and if we are to sacrifice readability what are the true gains in return. Short code might be great but does not necessarily means better solution.
