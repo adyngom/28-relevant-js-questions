@@ -85,7 +85,7 @@ if( (i % 5) === 0 ) {
 }
 
 // multiple of 3 and 5
-if( (i % 3) === 0  && (i % 5)) {
+if( (i % 3) === 0  && (i % 5 === 0)) {
     output = 'FizzBuzz';
 }
 ```
