@@ -119,3 +119,14 @@ Wait a minute, the above solution works and is readable ( kudos for that), but l
 We could of course get to a fancy one liner here for this particular challenge, but I'm not a particular fan of doing stuff for the sake of fancy or pretty. 
 
 As an interviewer, I spend more time making the candidate explain how it came down to that one liner and if we are to sacrifice readability what are the true gains in return. Short code might be great but does not necessarily means better solution.
+
+```javascript
+function fizzBuzz( start = 1, end = 100) {
+    for( let i = start; i <= end; i++) {
+        let output =  ( (i % 3) ? '' : 'Fizz' ); // if multiple of 3 is falsy
+	    output += ( (i % 5) ? '' : 'Buzz') ; // if multiple of 5 is falsy
+	    console.log(output || i); // output value or i if output is falsy
+    }
+}
+fizzBuzz(1,15);
+```
