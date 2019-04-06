@@ -111,8 +111,7 @@ function fizzBuzz( start = 1, end = 100) { // default parameters to set the defa
 }
 fizzBuzz();
 ```
-Wait a minute, the above solution works and is readable ( kudos for that), but let's look into a quick refactor. We can make this a tad more performant and a bit more JavaScripty which gets us into the next section... refactoring. 
-
+Wait a minute, the above solution works and is readable ( kudos for that), but let's look into a quick refactor. We can make this a bit more JavaScripty and since we are to show our Javascript skills, this gets us to my favorite section... refactoring.
 
 ### The refactor
 
@@ -141,9 +140,71 @@ Let's start with falsy values JavaScript, what in the heck are we talking about.
 JavaScript uses Type Conversion to coerce any value to a Boolean in contexts that require it, such as conditionals and loops.
 
 For our particular context the important keywords are **"Boolean context"** and **"conditionals"** since they are relevant to our solution. Before looking at how it applies, here is the list of the most common falsy values in Javascript:
-
-* The boolean **false** not the same as the string **_'false'_** 
+* The boolean **false** not the same as the string **_'false'_**
 * The number **0** - once again this is different from the string **_'0'_**
 * The **null** object
 * The primitive type **undefined** assigned to non initialized variable
-* Any representation of an empty string **''**, **""**, **``**
+* Any representation of an empty string **''**, **""**, **``** (single quotes, double quotes or back-ticks)
+
+### The rewrite
+
+Let's focus on one segment of our fizzBuzz function
+
+```javascript
+if( (i % 3) === 0 ) {
+    output = 'Fizz';
+}
+// this could be refactored as
+if( !(i % 3) ) output = 'Fizz';
+```
+Breaking down the refactored line gives us this picture
+* if (...)  ==> **conditional construct outside - boolean context inside**
+* !         ==> **is false**
+* (i % 3)   ==> **type coercion - will check if value is falsy or truthy**
+
+Replace **i** by a few numbers to better understand it
+```javascript
+if (!( 1 % 3) ...) /*becomes*/ if (!( 3 ) ...) /*3 is not false or falsy so check fails*/
+if (!( 2 % 3) ...) /*becomes*/ if (!( 6 ) ...) /*6 is not false or falsy so check fails*/
+if (!( 3 % 3) ...) /*becomes*/ if (!( 0 ) ...) /*0 is not false but is falsy so check passes*/
+```
+I can rewrite now my entire function using the logic above
+
+```javascript
+function fizzBuzz( start = 1, end = 100) {
+    for( let i = start; i <= end; i++) {
+        let output = i;
+        if( !(i % 3) ) output = 'Fizz';
+        if( !(i % 5) ) output = 'Buzz';
+        if( !(i % 3) && !(i % 5) ) output = 'FizzBuzz';
+        console.log(output);
+    }
+}
+```
+I was quite ecstatic when I got to this solution, but it did not too long unfortunately. The last line seemed redundant to me and honestly was bugging me. How could I combine the checks of 3 and 5 in one pass. 
+
+And then it hit me, what if I could start with an empty string, attach to it the word 'Fizz' if it passes the 3 condition and attach the word 'Buzz' if it passes the 5 condition too. I drew this on a piece of paper
+
+* i = 1 ==> no Fizz '' ==> no Buzz '' ==> output is 1
+* i = 3 ==> yes 'Fizz' ==> no Buzz '' ==> output is 'Fizz'
+* i = 5 ==> no Fizz '' ==> yes 'Buzz' ==> output is 'Buzz'
+* i = 15 => yes 'Fizz' ==> yes 'Buzz' ==> output is 'FizzBuzz'
+
+The ternary operator will allow to assign a value if condition checks and an alternate value if it fails in a very terse manner. 
+
+Something else became obvious, we are outputting either a string or a number while we cycling through the values of **i** and as we saw in a previous section an empty string is a falsy value. So how do we translate all that intelligence into working code. 
+
+The essential piece to achieve that was that the value of **output** was either going to be one of the possible strings 'Fizz', 'Buzz', 'FizzBuzz' or be falsy. In the falsy case **i** will just be passed as is. 
+
+So the final rewrite with more comments
+
+```javascript
+function fizzBuzz( start = 1, end = 100) {
+    for( let i = start; i <= end; i++) {
+        let output =  ( (i % 3) ? '' : 'Fizz' ); // output is assigned a value or empty
+	    output += ( (i % 5) ? '' : 'Buzz') ; // output concatenates the next value
+	    console.log(output || i); // || or operator if output is falsy will show i value
+    }
+}
+fizzBuzz(1,15);
+```
