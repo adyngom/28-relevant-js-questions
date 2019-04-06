@@ -118,7 +118,9 @@ Wait a minute, the above solution works and is readable ( kudos for that), but l
 
 We could of course get to a fancy one liner here for this particular challenge, but I'm not a particular fan of doing stuff for the sake of fancy or pretty. 
 
-As an interviewer, I spend more time making the candidate explain how it came down to that one liner and if we are to sacrifice readability what are the true gains in return. Short code might be great but does not necessarily means better solution.
+So let's flip the switch what I'm going to do this time is I will show you my final solution and I will walk you through how did I get to it. 
+
+This can turn into a handy skill if you are to read and understand other people's code or if you are to explain it to someone else. Through the years I have provided many solutions for this challenge, but the one below is by far my favorite.
 
 ```javascript
 function fizzBuzz( start = 1, end = 100) {
@@ -130,3 +132,18 @@ function fizzBuzz( start = 1, end = 100) {
 }
 fizzBuzz(1,15);
 ```
+
+The solution uses the ternary operator syntax to set the conditions and takes advantage of something that might not very obvious at first for the untrained eye - JavaScript falsy values.
+
+Let's start with falsy values JavaScript, what in the heck are we talking about. A great definition is provided by the [Mozilla Developer Network (MDN )](https://developer.mozilla.org/en-US/docs/Glossary/Falsy):
+
+> A falsy value is a value that is considered false when encountered in a Boolean context.
+JavaScript uses Type Conversion to coerce any value to a Boolean in contexts that require it, such as conditionals and loops.
+
+For our particular context the important keywords are **"Boolean context"** and **"conditionals"** since they are relevant to our solution. Before looking at how it applies, here is the list of the most common falsy values in Javascript:
+
+* The boolean **false** not the same as the string **_'false'_** 
+* The number **0** - once again this is different from the string **_'0'_**
+* The **null** object
+* The primitive type **undefined** assigned to non initialized variable
+* Any representation of an empty string **''**, **""**, **``**
