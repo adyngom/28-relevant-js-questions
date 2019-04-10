@@ -8,4 +8,4 @@ const supervisor = { roleId: 2, rate: 15,overtime: 22.5 };
 const admin = { roleId: 1, rate: 30,  overtime: 0 // salary no overtime };
 ```
 
-Write a base function that takes a role (object), hours (number) and ovtHours (number) as arguments and returns the employee gross pay. Using this base function, create three curried functions that respectively will calculate the associate, supervisor, admin gross pay.
+Write a **base function** that takes a **role (object)**, **hours** (number) and **ovtHours** (number) as arguments and returns the employee gross pay. Using this base function, create three curried functions that respectively will calculate the associate, supervisor, admin gross pay.
