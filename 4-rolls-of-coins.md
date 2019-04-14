@@ -14,7 +14,7 @@ Coins | Coins per roll | Value
  Dime    ==> 10 | 50 | $5.00
  Quarter ==> 25 | 40 | $10.00
 
- Your program will accept an array jar of coins. You can assume that each coin will be either 1, 5, 10 or 25. It should print a message like the one below:
+ Your program will accept an unsorted array of coins. You can assume that each coin will be either 1, 5, 10 or 25. It should print a message like the one below:
 
 Pennies:10 rolls - 39 left
 <br />Nickels:   25 rolls - 0 left
