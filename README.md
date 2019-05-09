@@ -1,4 +1,4 @@
-[**Table of Content - All questions](toc.md)
+[**Table of Content - All questions**](toc.md)
 
 # 28 Relevant JavaScript Interview Questions
 ### A little perspective
