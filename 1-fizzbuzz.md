@@ -217,3 +217,4 @@ function fizzBuzz( start = 1, end = 100) {
 }
 fizzBuzz(1,15);
 ```
+[Back to all questions](toc.md)
