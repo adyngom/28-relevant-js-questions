@@ -1,3 +1,5 @@
+[**Table of Content - All questions](toc.md)
+
 # 28 Relevant JavaScript Interview Questions
 ### A little perspective
 For the past 12 years, I have been on both sides of the Front End Interview table. Sadly though, the emphasis is always put on Javascript during those rounds and the two other important languages — _HTML_ and _CSS_ — are not usually given the same weight.
