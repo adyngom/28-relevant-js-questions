@@ -1,4 +1,4 @@
-[Back to all questions](toc.md)
+**FizzBuzz** - [Back to all questions](toc.md)
 
 # The challenge
 
