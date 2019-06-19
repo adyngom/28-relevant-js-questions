@@ -3,7 +3,7 @@
 # The challenge
 **_Best suited for:_** Senior | Expert **Stage:** At home | Round 2 | Onsite
 
-As a team you have decided to keep your code base as DRY as possible. You want to put in place a utility library of small frequently used functionality. The voted name is **Nodash** ;)
+As a team you have decided to keep your code base as DRY as possible. You want to put in place a utility library of small frequently used functionalities. The voted name for the project is **Nodash** ;)
 
 Since array manipulation is one of the most frequent task encountered by the team, you are tasked to start the project with these four methods as a base:
 
