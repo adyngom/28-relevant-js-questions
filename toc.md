@@ -1,4 +1,5 @@
-# \[ 8 / 20 \] JavaScript interview questions.
+# \[ 10 / 18 \] JavaScript interview questions.
+
 1. [FizzBuzz](1-fizzbuzz.md)
 2. [Array sum polyfill](2-arraysum-polyfill.md)
 3. [Calculate employee gross pay](3-grosspay.md)
@@ -8,3 +9,4 @@
 7. [Mini testing library](7-mini-testing-library.md)
 8. [Input autocomplete](8-input-autocomplete.md)
 9. [Utility library](9-utility-library.md)
+10. [Delayed event](10-delayed-event.md)
