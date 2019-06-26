@@ -1,4 +1,4 @@
-![28 questions book series - JavaScript, Angular, React, Node](https://app.box.com/s/8rwrm2sqk7ptmi202uth2qmgax09fwqs)
+![28 questions book series - JavaScript, Angular, React, Node](https://res.cloudinary.com/shifasantebienetre-com/image/upload/v1561570153/Public/all.jpg)
 
 [**Table of Content - All questions**](toc.md)
 
